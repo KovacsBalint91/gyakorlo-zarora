@@ -125,7 +125,7 @@ function modelSearch(key, arr) {
   var array = modelAscSort(arr);
   var input = key.toLocaleLowerCase();
   for ( var i = 0; i < array.length; i++) {
-    if (array[i].model.toLocaleLowerCase().indexOf(input) !== -1) {
+    if (input === array[i].model.toLocaleLowerCase() || array[i].model.toLocaleLowerCase().indexOf(input) !== -1) {
       console.log(array[i]);
       return;
     }
@@ -177,6 +177,6 @@ function successAjax(xhttp) {
   // console.log(sumPassengers(userDatas, 'passengers'));
   // console.log(longestShip(userDatas, 'lengthiness'));
   // console.log(modelSearch('Modifie', userDatas));
-  modelSearch('modif', userDatas);
+  modelSearch('Modified Luxury Sail Barge', userDatas);
 }
 getData('/json/spaceships.json', successAjax);
